@@ -10,6 +10,10 @@
     --laranja-gamifica: #f06638;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container-grid {
     width: 80vw;
     max-width: 1400px;
@@ -88,6 +92,41 @@ header .container-grid {
 
     font-family: "anta";
     font-size: 32px;
+}
+
+.conteudo-banner span {
+    display: block;
+
+    overflow: hidden;
+
+    border-right: 4px solid var(--laranja-gamifica);
+    white-space: nowrap;
+
+    animation: 
+        digitando 2s steps(40, end),
+        cursor 1s step-end infinite
+    ;
+}
+
+@keyframes digitando {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes cursor {
+    from, 
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: var(--laranja-gamifica);
+    }
 }
 
 #sobre {
