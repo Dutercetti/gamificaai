@@ -1,13 +1,19 @@
-/* reset CSS*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: "Montserrat";
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
 }
 
 :root {
     --roxo-gamifica: #47208b;
     --laranja-gamifica: #f06638;
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 }
 
 html {
@@ -18,23 +24,89 @@ html {
     width: 80vw;
     max-width: 1400px;
 
-    /* margin: 20px - espaçamento externo de 20px*/
-    /*margin 20px: 20px 10 px - espaçamento 20px na vertical, 10px na horizontal*/
-    /*margin 20px 10px 5px - espaçamento 20px pra cima, 10px na horizontal, 5px pra baixo*/
-    /*margin 20px 10px 5px 2px - espaçamento 20px para cima, 10px para a direita, 5px para baixo e 2px para a esquerda*/
+    /* margin: 20px - Espaçamento externo de 20px */
+    /* margin: 20px 10px - Espaçamento 20px na vertical, 10px na horizontal */
+    /* margin: 20px 10px 5px - Espaçamento 20px para cima, 10px na horizontal, 5px para baixo */
+    /* margin: 20px 10px 5px 2px - Espaçamento 20px para cima, 10px para a direita, 5px para baixo, 2px para a esquerda */
 
     margin: 0 auto;
 }
 
 .banner {
-    /*vh é a porcentagem de ALTURA da tela*/
-    /*vw é a porcentagem de LARGURA da tela*/
+    /* vh é a porcentagem da ALTURA da tela */
+    /* vw é a porcentagem da LARGURA da tela */
     height: 100vh;
 
-    background-image: linear-gradient(90deg, rgba(53, 24, 104, 1) 0%, rgba(53, 24, 104, 0.8)100%), url(IMG/BG-ROOM.png);
     background-repeat: no-repeat;
 
     background-position: 165% 40%;
+
+    position: relative;
+}
+
+.primeiro-banner {
+    background-image: linear-gradient(90deg, rgba(53, 24, 104, 1) 0%, rgba(53, 24, 104, 0.8) 100%), url(img/bg-room.png);
+}
+
+.segundo-banner {
+    background-image: linear-gradient(90deg, rgba(24, 104, 36, 1) 0%, rgba(24, 104, 36, 0.8) 100%), url(img/bg-room.png);
+}
+
+.terceiro-banner {
+    background-image: linear-gradient(90deg, rgba(104, 24, 48, 1) 0%, rgba(53, 24, 104, 0.8) 100%), url(img/bg-room.png);
+}
+
+#botao-voltar, #botao-proximo {
+    width: 30px;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    position: absolute;
+}
+
+#botao-voltar svg, #botao-proximo svg {
+    fill: #ffffff76;
+}
+
+#botao-voltar {
+    left: 4%;
+}
+
+#botao-proximo {
+    right: 4%;
+}
+
+.botoes {
+    width: 150px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    bottom: 4%;
+
+    /* Centralizar usando position */
+    /* Adicionar left 50% */
+    /* Usar função calc() para subtrair metade da largura do elemento Ex.: 75px */
+    left: calc(50% - 75px);    
+}
+
+.botoes button {
+    width: 30px;
+
+    display: unset;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.botoes button svg {
+    fill: #ffffff76;
 }
 
 header {
@@ -43,6 +115,7 @@ header {
 
 header button {
     display: none;
+    cursor: pointer;
 }
 
 header img {
@@ -50,7 +123,6 @@ header img {
 }
 
 header .container-grid {
-    /*pesquisar sobre flexbox*/
     height: 100%;
 
     display: flex;
@@ -59,7 +131,6 @@ header .container-grid {
 }
 
 .menu {
-    /*se precisar especificar: nav.menu*/
     width: 700px;
 
     display: flex;
@@ -68,19 +139,17 @@ header .container-grid {
 
 .menu a {
     font-size: 18px;
-    font-family: 'anta';
+    font-family: 'Anta';
 
     color: white;
 
     text-decoration: underline transparent;
     text-decoration-thickness: 2px;
 
-    transition: text-decoration 500ms ease;
+    transition: text-decoration 500ms ease;    
 }
 
 .menu a:hover {
-    color: white;
-
     text-decoration-color: white;
 }
 
@@ -94,7 +163,7 @@ header .container-grid {
 .conteudo-banner p {
     color: white;
 
-    font-family: "anta";
+    font-family: "Anta";
     font-size: 32px;
 }
 
@@ -103,12 +172,12 @@ header .container-grid {
 
     overflow: hidden;
 
-    border-right: 4px solid var(--laranja-gamifica);
+    border-right: 5px solid var(--laranja-gamifica);
     white-space: nowrap;
 
     animation: 
         digitando 2s steps(40, end),
-        cursor 1s step-end infinite
+        cursor 0.75s step-end infinite
     ;
 }
 
@@ -123,7 +192,7 @@ header .container-grid {
 }
 
 @keyframes cursor {
-    from, 
+    from,
     to {
         border-color: transparent;
     }
@@ -145,13 +214,13 @@ header .container-grid {
 }
 
 h2 {
-    font-family: "anta";
+    font-family: "Anta";
     font-size: 28px;
 }
 
 #sobre p {
+    font-family: "Montserrat";
     font-size: 17px;
-    font-family: "montserrat";
 
     text-align: left;
 
@@ -178,10 +247,6 @@ h2 {
     height: 400px;
     width: 250px;
 
-    background-color: var(--roxo-gamifica);
-
-    border-radius: 4px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -190,42 +255,11 @@ h2 {
     padding-bottom: 20px;
     margin-bottom: 40px;
 
-    box-shadow: 17px 10px 18px -16px rgba(122, 122, 122, 0.81);
-}
+    background-color: var(--roxo-gamifica);
 
-.card p {
-    color: white;
+    border-radius: 4px; 
 
-    font-family: "montserrat";
-    font-size: 16px;
-
-    padding: 7%;
-
-    text-align: left;
-}
-
-.card button {
-    background-color: #f06638;
-
-    color: white;
-
-    font-family: "montserrat";
-    font-size: 17px;
-    font-weight: bold;
-
-    height: 40px;
-    width: 90%;
-
-    border: none;
-    border-radius: 4px;
-
-    cursor: pointer;
-}
-
-.card button:hover {
-    background-color: #ad4929;
-
-    transition: background-color 500ms ease;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .card img {
@@ -235,15 +269,52 @@ h2 {
     border-radius: 4px 4px 0px 0px;
 }
 
+.card p {
+    color: white;
+
+    font-family: "Montserrat";
+    font-size: 16px;
+
+    text-align: left;
+
+    padding: 7%;
+}
+
+.card button {
+    width: 90%;
+    height: 40px;
+
+    background-color: var(--laranja-gamifica);
+
+    border: none;
+    border-radius: 4px;
+
+    color: white;
+
+    font-family: "Montserrat";
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 500ms ease;
+}
+
+.card button:hover {
+    background-color: #ad4929;
+}
+
 #portfolio {
     height: 250px;
 
-    background-image: url(./IMG/bonecos.png);
+    background-image: url(img/bonecos.png);
     background-size: 250px;
 
     background-attachment: fixed;
 
     position: relative;
+
+    margin-bottom: 120px;
 }
 
 .filtro {
@@ -253,7 +324,7 @@ h2 {
     background-color: #47208bc2;
 
     position: absolute;
-    top: 0px;
+    top: 0;
     left: 0;
 }
 
@@ -266,12 +337,16 @@ h2 {
 }
 
 #portfolio a {
-    color: white;
+    width: fit-content;
 
-    font-family: "anta";
+    color: white;  
+    
+    font-family: "Anta";
     font-size: 28px;
 
     z-index: 1;
+
+    transition: 200ms;
 }
 
 #portfolio a:hover {
@@ -288,7 +363,6 @@ h2 {
 
 #contato h2 {
     margin-bottom: 70px;
-    margin-top: 70px;
 }
 
 #contato form {
@@ -361,19 +435,17 @@ h2 {
     resize: none;
 }
 
-.campo input,
-.campo-descricao textarea {
-    font-family: "montserrat";
-    font-size: 17px;
-}
-
-.campo label,
-.campo-descricao label {
+.campo label, .campo-descricao label {
     margin-bottom: 15px;
 }
 
+.campo input, .campo-descricao textarea {
+    font-family: "Montserrat";
+    font-size: 17px;
+}
+
 .campo input::placeholder,
-.campo-descricao text::placeholder {
+.campo-descricao textarea::placeholder {
     color: #a0a0a0;
 }
 
@@ -393,8 +465,8 @@ h2 {
     border-radius: 4px;
 
     font-size: 17px;
-    font-family: "montserrat";
-    font-weight: 700;
+    font-family: "Montserrat";
+    font-weight: 700; /* Bold */
 
     text-transform: uppercase;
 
@@ -423,7 +495,7 @@ footer .container-grid {
 
 .redes-sociais {
     height: 50%;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -433,7 +505,7 @@ footer .container-grid {
 .redes-sociais p {
     color: #fff;
 
-    font-family: "anta";
+    font-family: "Anta";
     font-size: 24px;
 }
 
@@ -450,9 +522,19 @@ footer .container-grid {
 
 .icones-redes a:hover {
     color: var(--laranja-gamifica);
+}
 
-    transition: 500ms;
-} 
+/* OK - Scroll nos links */
+/* OK - Favicon */
+/* Animação do banner */
+
+.menu-fechado {
+    display: none;
+}
+
+#icone-barras {
+    display: none;
+}
 
 @media screen and (max-width: 1300px) {
     header {
@@ -481,7 +563,7 @@ footer .container-grid {
         flex-direction: column;
         justify-content: space-around;
 
-        background-color: #000000b5;
+        background-color: #000000da;
 
         position: absolute;
         top: 165px;
@@ -502,398 +584,6 @@ footer .container-grid {
     }
 }
 
-    @media screen and (max-width: 1080px) {
-        .container-cards {
-            flex-wrap: wrap;
-        }
-
-        .card {
-            height: 400px;
-
-            flex-grow: 0;
-            flex-shrink: 0;
-            flex-basis: 40%;
-        }
-
-        footer {
-            height: unset;
-        }
-
-        footer .container-grid {
-            padding: 80px;
-            flex-direction: column;
-        }
-
-        footer img {
-            margin-bottom: 100px;
-        }
-
-        footer p {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .redes-sociais {
-            align-items: center;
-        }
-    }
-
-    @media screen and (max-width: 800px) {
-        .card {
-            flex-basis: 45%;
-        }
-    }
-
-    @media screen and (max-width: 700px) {
-        #sobre {
-            height: unset;
-            margin-bottom: 40px;
-        }
-
-        #sobre h2 {
-            margin-bottom: 50px;
-        }
-
-        #sobre p {
-            margin-bottom: 30px;
-        }
-
-        #cases,
-        #contato {
-            margin-bottom: unset;
-        }
-
-        #portfolio a {
-            width: 100%;
-            text-align: center;
-        }
-
-        .campo,
-        .campo-descricao,
-        #contato form button {
-            width: 75%;
-        }
-    }
-
-        @media screen and (max-width: 520px) {
-            .container-grid {
-                width: 90%;
-            }
-
-            header img {
-                width: 200px;
-            }
-
-            .banner {
-                background-size: cover;
-            }
-
-            .conteudo-banner p {
-                font-size: 24px;
-            }
-
-            nav.menu {
-                width: 100%;
-
-                display: none;
-            }
-
-            #sobre {
-                padding-right: 0px;
-                padding-left: 0px;
-            }
-
-            #sobre p {
-                width: 90%;
-                margin: 0 auto;
-                margin-bottom: 20px;
-            }
-
-            #cases.container-grid {
-                width: 100%;
-                margin: unset;
-            }
-
-            .container-cards {
-                flex-wrap: nowrap;
-
-                gap: 40px;
-
-                overflow-x: auto;
-            }
-
-            .card {
-                height: 400px;
-                width: 280px;
-
-                flex-basis: unset;
-            }
-
-            .card:first-child {
-                margin-left: 30px;
-            }
-
-            .card:last-child {
-                margin-right: 30px;
-            }
-
-            #portfolio {
-                margin-bottom: 10px;
-            }
-
-            #contato {
-                padding-top: 150px;
-
-                background-color: var(--roxo-gamifica);
-                color: white;
-            }
-
-            #contato h2 {
-                margin-bottom: 0;
-            }
-
-            #contato form {
-                width: 100%;
-                border-radius: 0;
-            }
-        }
-
-        @media screen and (max-width: 400px) {
-            header img {
-                width: 160px;
-            }
-
-            header svg {
-                width: 40px;
-            }
-
-            .conteudo-banner p {
-                font-size: 20px;
-            }
-        }
-        @media screen and (max-width: 1300px) {
-            header {
-                position: relative;
-            }
-        
-            header button {
-                width: 50px;
-        
-                display: unset;
-        
-                background: none;
-                border: none;
-            }
-        
-            header svg {
-                fill: white;
-            }
-        
-            nav.menu {
-                height: 500px;
-                width: 350px;
-        
-                padding: 0px 30px;
-        
-                flex-direction: column;
-                justify-content: space-around;
-        
-                background-color: #000000da;
-        
-                position: absolute;
-                top: 165px;
-                right: 0px;
-            }
-        
-            #sobre {
-                padding: 100px 15%;
-            }
-        
-            .card {
-                height: 320px;
-                width: 200px;
-            }
-        
-            #contato form {
-                width: 75%;
-            }
-        }
-        
-        @media screen and (max-width: 1080px) {
-            .container-cards {
-                flex-wrap: wrap;
-            }
-        
-            .card {
-                height: 400px;
-        
-                flex-grow: 0;
-                flex-shrink: 0;
-                flex-basis: 40%;
-            }
-        
-            footer {
-                height: unset;
-            }
-        
-            footer .container-grid {
-                padding: 80px;
-                flex-direction: column;
-            }
-        
-            footer img {
-                margin-bottom: 100px;
-            }
-        
-            footer p {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 40px;
-            }
-        
-            .redes-sociais {
-                align-items: center;
-            }
-        
-        }
-        
-        @media screen and (max-width: 800px) {
-            .card {
-                flex-basis: 45%;
-            }
-        }
-        
-        @media screen and (max-width: 700px) {
-            #sobre {
-                height: unset;
-                margin-bottom: 40px;
-            }
-        
-            #sobre h2 {
-                margin-bottom: 50px;
-            }
-        
-            #sobre p {
-                margin-bottom: 30px;
-            }
-        
-            #cases,
-            #contato {
-                margin-bottom: unset;
-            }
-        
-            #portfolio a{
-                width: 100%;
-                text-align: center;
-            }
-        
-            .campo,
-            .campo-descricao,
-            #contato form button{
-                width: 75%;
-            }
-        }
-        
-        @media screen and (max-width: 520px){
-            .container-grid{
-                width: 90%;
-            }
-        
-            header img{
-                width: 200px;
-            }
-        
-            .banner{
-                background-size: cover;
-            }
-        
-            .conteudo-banner p{
-                font-size: 24px;
-            }
-        
-            nav.menu{
-                width: 100%;
-        
-                display: none;
-            }
-        
-            #sobre{
-                padding-right: 0px;
-                padding-left: 0px;
-            }
-        
-            #sobre p{
-                width: 90%;
-                margin: 0 auto;
-                margin-bottom: 20px;
-            }
-        
-            #cases.container-grid{
-                width: 100%;
-                margin: unset;
-            }
-        
-            .container-cards{
-                flex-wrap: nowrap;
-        
-                gap: 40px;
-        
-                overflow-x: auto;
-            }
-        
-            .card{
-                height: 400px;
-                width: 280px;
-        
-                flex-basis: unset;
-            }
-        
-            .card:first-child{
-                margin-left: 30px;
-            }
-        
-            .card:last-child{
-                margin-right: 30px;
-            }
-        
-            #portfolio{
-                margin-bottom: 0;
-            }
-        
-            #contato{
-                padding-top: 150px;
-        
-                background-color: var(--roxo-gamifica);
-                color: white;
-            }
-        
-            #contato h2{
-                margin-bottom: 0;
-            }
-        
-            #contato form{
-                width: 100%;
-                border-radius: 0;
-            }
-        }
-        
-        @media screen and (max-width: 400px){
-            header img{
-                width: 160px;
-            }
-        
-            header svg{
-                width: 40px;
-            }
-        
-            .conteudo-banner p{
-                font-size: 20px;
-            }
-        
-            footer img{
-                width: 200px;
-            }
-        
-            
-        }
+@media screen and (max-width: 1080px) {
+    
+}
